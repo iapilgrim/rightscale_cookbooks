@@ -25,7 +25,7 @@ case node[:platform]
 when "ubuntu"
   log "not supported"
 when "centos", "redhat"
-  node[:app][:packages] = [
+  node[:db_postgres][:server_packages_install] = [
     "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm"
   ]
 
