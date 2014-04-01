@@ -10,7 +10,7 @@
   "suggestions": {
   },
   "recipes": {
-    "db_postgres::setup_server_9_1": "Sets the DB PostgreSQL provider. Sets version 9.1 and node variables specific to PostgreSQL 9.1.",
+    "db_postgres::setup_server_9_3": "Sets the DB PostgreSQL provider. Sets version 9.1 and node variables specific to PostgreSQL 9.3.",
     "db_postgres::do_show_slave_sync_mode": "Shows the sync mode used for replication.",
     "db_postgres::do_set_slave_async_mode": "Sets master to do async-based replication with slaves.",
     "db_postgres::do_set_slave_sync_mode": "Sets master to do sync-based replication with slaves."
@@ -37,7 +37,7 @@
       "required": "optional",
       "calculated": false,
       "recipes": [
-        "db_postgres::setup_server_9_1"
+        "db_postgres::setup_server_9_3"
       ],
       "display_name": "Server Usage",
       "default": "dedicated",

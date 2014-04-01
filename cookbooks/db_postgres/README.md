@@ -41,9 +41,9 @@ There are no known limitations.
       sets up generic server and client inputs. This will also include
       db::default recipe which installs the client.
 
-  For example: To set up and install PostgreSQL 9.1 client and server
+  For example: To set up and install PostgreSQL 9.3 client and server
 
-    db_postgres::setup_server_9_1
+    db_postgres::setup_server_9_3
     db::install_server
 
 ## USAGE:

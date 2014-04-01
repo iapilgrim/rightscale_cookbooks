@@ -15,9 +15,9 @@ depends "db"
 depends "rightscale"
 depends "block_device"
 
-recipe "db_postgres::setup_server_9_1",
-  "Sets the DB PostgreSQL provider. Sets version 9.1 and node variables" +
-  " specific to PostgreSQL 9.1."
+recipe "db_postgres::setup_server_9_3",
+  "Sets the DB PostgreSQL provider. Sets version 9.3 and node variables" +
+  " specific to PostgreSQL 9.3."
 
 recipe "db_postgres::do_set_slave_sync_mode",
   "Sets master to do sync-based replication with slaves."
@@ -40,6 +40,6 @@ attribute "db_postgres/server_usage",
     " is configured to use less resources so that it can be run concurrently" +
     " with other apps like Apache and Rails for example." +
     " Example: dedicated",
-  :recipes => ["db_postgres::setup_server_9_1"],
+  :recipes => ["db_postgres::setup_server_9_3"],
   :choice => ["shared", "dedicated"],
   :default => "dedicated"
