@@ -28,9 +28,9 @@ when "centos", "redhat"
   # node[:db_postgres][:server_packages_install] = [
   #   "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm"
   # ]
-  
+
   bash "Install postgresql93" do
-    code "yum install http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm"
+    code "yum -y install http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm"
   end
 else
   log "Unrecognized distro #{node[:platform]}, exiting "
