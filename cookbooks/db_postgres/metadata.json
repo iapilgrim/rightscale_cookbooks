@@ -6,7 +6,7 @@
     "db": ">= 0.0.0"
   },
   "name": "db_postgres",
-  "version": "13.5.0",
+  "version": "13.5.2",
   "suggestions": {
   },
   "recipes": {
