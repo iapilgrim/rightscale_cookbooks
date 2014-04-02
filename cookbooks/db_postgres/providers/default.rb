@@ -584,10 +584,11 @@ action :setup_monitoring do
     action :nothing
   end
 
-  collectd_version = node[:rightscale][:collectd_packages_version]
+  #collectd_version = node[:rightscale][:collectd_packages_version]
+  #FIXME: always install latest version of collectd-postgresql
   package "collectd-postgresql" do
     action :install
-    version "#{collectd_version}" unless collectd_version == "latest"
+    #version "#{collectd_version}" unless collectd_version == "latest"
   end
 
   cookbook_file "#{node[:rightscale][:collectd_share]}/postgresql_default.conf" do
