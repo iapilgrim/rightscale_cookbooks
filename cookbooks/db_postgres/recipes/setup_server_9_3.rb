@@ -21,20 +21,20 @@ log "  Setting DB PostgreSQL version to #{node[:db][:version]}"
 
 
 
-# case node[:platform]
-# when "ubuntu"
-#   log "not supported"
-# when "centos", "redhat"
-#   # node[:db_postgres][:server_packages_install] = [
-#   #   "http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm"
-#   # ]
+case node[:platform]
+when "ubuntu"
+  log "not supported"
+when "centos", "redhat"
+  if `rpm -qa | grep postgresql`.empty?
+    log "can not find exist postgresql, installing ..."
+    bash "Install postgresql93" do
+      code "yum -y install http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm"
+    end
+  end
 
-#   bash "Install postgresql93" do
-#     code "yum -y install http://yum.postgresql.org/9.3/redhat/rhel-6-x86_64/pgdg-redhat93-9.3-1.noarch.rpm"
-#   end
-# else
-#   log "Unrecognized distro #{node[:platform]}, exiting "
-# end
+else
+  log "Unrecognized distro #{node[:platform]}, exiting "
+end
 
 node[:db_postgres][:server_packages_install] = value_for_platform(
   ["centos", "redhat"] => {
