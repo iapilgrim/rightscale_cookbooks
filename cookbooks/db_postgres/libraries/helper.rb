@@ -22,11 +22,12 @@ module RightScale
         def init(new_resource)
           begin
             require 'rightscale_tools'
+            require 'mydatabase'
           rescue LoadError
             Chef::Log.warn "  Missing gem 'rightscale_tools'"
           end
           mount_point = new_resource.name
-          RightScale::Tools::Database.factory(
+          RightScale::Tools::MyDatabase.factory(
             :postgres,
             new_resource.user,
             new_resource.password,
