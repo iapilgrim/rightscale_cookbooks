@@ -16,7 +16,8 @@ module RightScale
               
       def initialize(user, passwd, data_dir, timeout, max_attempts, logger=Logger(stdout))
         require 'rightscale_tools/premium/db/common/d_b_utils'
-        require 'd_b_utils_postgres93'
+        # require 'd_b_utils_postgres93'
+        require File.dirname(__FILE__) +  '/d_b_utils_postgres93.rb'
         require 'rubygems'
         Gem.clear_paths
         require 'pg'

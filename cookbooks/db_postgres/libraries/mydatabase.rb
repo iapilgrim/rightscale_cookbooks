@@ -44,7 +44,8 @@ module RightScale
           require 'rightscale_tools/database/database_mysql55'
           RightScale::Tools::DatabaseMysql55.new(user, passwd, data_dir, timeout, max_attempts, logger)
         when :postgres
-          require 'database/database_postgres93'
+          # require 'database/database_postgres93'
+          require File.dirname(__FILE__) +  '/database/database_postgres93.rb'
           RightScale::Tools::DatabasePostgres.new(user, passwd, data_dir, timeout, max_attempts,logger)
         else
           raise "ERROR: Database type #{type} is not currently supported"

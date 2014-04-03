@@ -22,7 +22,9 @@ module RightScale
         def init(new_resource)
           begin
             require 'rightscale_tools'
-            require 'mydatabase'
+            require File.dirname(__FILE__) +  '/mydatabase.rb'
+
+            # require 'mydatabase'
           rescue LoadError
             Chef::Log.warn "  Missing gem 'rightscale_tools'"
           end
