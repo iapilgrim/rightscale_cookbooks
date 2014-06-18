@@ -3,7 +3,9 @@ maintainer       'Chef Software, Inc.'
 maintainer_email 'cookbooks@getchef.com'
 license          'Apache 2.0'
 description      'Manage Splunk Enterprise or Splunk Universal Forwarder'
-version          '1.2.2'
+version          '1.2.3'
 
 # for secrets management in setup_auth recipe
 # depends 'chef-vault', '>= 1.0.4'
+depends "rightscale"
+recipe "chef-splunk::client","Setup Splunk Forwarder" 
